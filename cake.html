@@ -1,0 +1,197 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Birthday Cake 🎂</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background-image:url("cakebg.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-family:Arial,sans-serif;
+
+}
+
+.box{
+
+width:650px;
+
+padding:40px;
+
+background:rgba(255,255,255,0.2);
+
+backdrop-filter:blur(10px);
+
+border-radius:20px;
+
+text-align:center;
+
+color:white;
+
+box-shadow:0 0 20px white;
+
+}
+
+h1{
+
+font-size:45px;
+
+margin-bottom:15px;
+
+}
+
+h2{
+
+margin-top:15px;
+
+}
+
+img{
+
+width:280px;
+
+margin-top:20px;
+
+margin-bottom:20px;
+
+}
+
+#count{
+
+font-size:70px;
+
+color:yellow;
+
+margin-top:15px;
+
+}
+
+button{
+
+padding:15px 40px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:30px;
+
+background:pink;
+
+color:white;
+
+cursor:pointer;
+
+margin-top:20px;
+
+}
+
+button:hover{
+
+background:hotpink;
+
+}
+
+#next{
+
+display:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🎂 Birthday Cake 🎂</h1>
+
+<p>Blow the candle in...</p>
+
+<img src="cake.png">
+<audio controls>
+<source src="happybirthday.mp3z' type="audio/mpeg">
+</audio>
+
+<h1 id="count">3</h1>
+
+<button onclick="startCountdown()">
+
+🕯 Blow Candle
+
+</button>
+
+<br>
+
+<button id="next" onclick="window.location.href='letter.html'">
+
+💌 Open Your Letter
+
+</button>
+
+</div>
+
+<script>
+
+function startCountdown(){
+
+let number=3;
+
+let text=document.getElementById("count");
+
+let timer=setInterval(function(){
+
+number--;
+
+if(number>0){
+
+text.innerHTML=number;
+
+}
+
+else{
+
+clearInterval(timer);
+
+text.innerHTML="🎉 HAPPY BIRTHDAY 🎉";
+
+document.getElementById("next").style.display="inline-block";
+
+}
+
+},1000);
+
+}
+
+</script>
+
+</body>
+
+</html>
+```

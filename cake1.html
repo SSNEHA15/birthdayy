@@ -1,0 +1,310 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Birthday Cake 🎂</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background-image:url("cakebg.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-family:Arial,sans-serif;
+
+}
+
+.box{
+
+width:700px;
+
+padding:40px;
+
+background:rgba(255,255,255,0.20);
+
+backdrop-filter:blur(10px);
+
+border-radius:20px;
+
+text-align:center;
+
+color:white;
+
+box-shadow:0 0 20px rgba(255,255,255,0.5);
+
+}
+
+h1{
+
+font-size:45px;
+
+margin-bottom:20px;
+
+}
+
+p{
+
+font-size:20px;
+
+margin-bottom:20px;
+
+}
+
+img{
+
+width:300px;
+
+border-radius:20px;
+
+box-shadow:0 0 20px white;
+
+margin-top:20px;
+
+}
+
+#count{
+
+font-size:80px;
+
+color:yellow;
+
+margin-top:20px;
+
+}
+
+#birthday{
+
+display:none;
+
+font-size:60px;
+
+color:yellow;
+
+margin-top:20px;
+
+animation:blink 1s infinite;
+
+}
+
+button{
+
+margin-top:30px;
+
+padding:15px 40px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:30px;
+
+background:pink;
+
+color:white;
+
+cursor:pointer;
+
+}
+#nextBtn{
+
+display:none;
+
+}
+
+margin-top:30px;
+
+padding:15px 40px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:30px;
+
+background:pink;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:hotpink;
+
+}
+
+@keyframes blink{
+
+0%{opacity:1;}
+
+50%{opacity:.3;}
+
+100%{opacity:1;}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🎂 Blow The Candle 🎂</h1>
+
+<p>Make a wish before the candle goes out... ✨</p>
+
+<img id="cakeImage" src="mns.png">
+
+<h1 id="count">3</h1>
+
+<h1 id="birthday">
+
+🎉 HAPPY BIRTHDAY 🎉
+
+</h1>
+<button id="startBtn" onclick="startCountdown()">
+🕯️ Blow The Candle
+</button>
+
+
+
+<button id="nextBtn" onclick="window.location.href='letter.html'">
+
+💌 Open Your Letter
+
+</button>
+```
+```html id="x8v2mp"
+
+<script>
+
+var count=document.getElementById("count");
+
+var cake=document.getElementById("cakeImage");
+
+var birthday=document.getElementById("birthday");
+
+var button=document.getElementById("nextBtn");
+
+var song=new Audio("happybirthday.mp3");
+
+function startCountdown(){
+
+document.getElementById("startBtn").style.display="none";
+
+var number=3;
+
+count.innerHTML=number;
+
+count.style.display="block";
+
+var timer=setInterval(function(){
+
+number--;
+
+if(number>0){
+
+count.innerHTML=number;
+
+}
+
+else{
+
+clearInterval(timer);
+
+cake.src="cake2.png";
+
+count.style.display="none";
+
+birthday.style.display="block";
+
+song.play();
+
+setTimeout(function(){
+
+button.style.display="inline-block";
+
+},5000);
+
+}
+
+},1000);
+
+}
+
+number--;
+
+if(number>0){
+
+count.innerHTML=number;
+
+}
+
+else{
+
+clearInterval(timer);
+
+/* Candle Off */
+
+cake.src="CKK.gif";
+
+/* Hide Countdown */
+
+count.style.display="none";
+
+/* Show Happy Birthday */
+
+birthday.style.display="block";
+
+/* Play Song */
+
+song.play();
+
+/* Show Letter Button After 5 Seconds */
+
+setTimeout(function(){
+
+button.style.display="inline-block";
+
+},5000);
+
+}
+
+},1000);
+
+},1000);
+
+</script>
+
+</div>
+
+</body>
+
+</html>
+```
